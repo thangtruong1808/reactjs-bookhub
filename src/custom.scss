@@ -1,0 +1,36 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+:root {
+    --bs-body-bg: #{$gray-100};
+    --bs-body-color: #212529;
+    --bs-btn-bg: #{$blue-400};
+    --bs-btn-border-color: #{$blue-400};
+    .author-bg-info {
+        background-color: #{$gray-300};
+        color: black;
+    }
+
+    .btn-card {
+        --bs-btn-bg: #{$green-400};
+        --bs-btn-color: #212529;
+        --bs-btn-hover-bg: #{$green-300};
+        --bs-btn-border-color: #{$green-400};
+    }
+}
+[data-theme="dark"] {
+    --bs-body-bg: #{$gray-800};
+    --bs-body-color: #{$gray-400};
+
+    .btn-card {
+        --bs-btn-bg: #{$gray-500};
+        --bs-btn-color: #212529;
+        --bs-btn-hover-bg: #{$gray-700};
+        --bs-btn-border-color: #{$gray-500};
+    }
+
+    .accordion-button.collapsed {
+        background: #fff;
+    }
+}
