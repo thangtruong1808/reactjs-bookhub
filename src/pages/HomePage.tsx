@@ -9,45 +9,20 @@ import useBookQueryStore from "../components/store";
 import { Book } from "../services/book-service";
 
 const HomePage = () => {
-  // const searchText = useBookQueryStore((s) => s.bookQuery.searchText);
-  // const setSearchText = useBookQueryStore((s) => s.setSearchText);
-
-  // const genresSelected = useBookQueryStore((s) => s.bookQuery.genresSelected);
-  // const setGenresSelected = useBookQueryStore((s) => s.setGenresSelected);
-  // // setGenresSelected(genresSelected);
-
-  // const authorSelected = useBookQueryStore((s) => s.bookQuery.authorSelected);
-  // const setAuthorSelected = useBookQueryStore((s) => s.setAuthorSelected);
-
   const searchText = useBookQueryStore((state) => state.searchText);
-  const setSearchText = useBookQueryStore((state) => state.setSearchText);
-
   const genresSelected = useBookQueryStore((state) => state.genresSelected);
-
   const authorSelected = useBookQueryStore((state) => state.authorSelected);
 
   const [filteredItems, setFilteredItems] = useState<Book[]>([]);
   const { books, isLoading } = useBooks();
 
-  // const [query, setQuery] = useState("");
-
   useEffect(() => {
     console.log("------- You called Home Component -------");
-    // setSearchText(searchText);
-    // setGenresSelected(genresSelected);
-    // setAuthorSelected(authorSelected);
 
     FilteredData(books, searchText);
-  }, [books, genresSelected, searchText]);
+  }, [books, genresSelected, searchText, authorSelected]);
 
   const FilteredData = (books: Book[], searchText: string | undefined) => {
-    // console.log("-------------------------genresSelected: " + genresSelected);
-    // if (genresSelected !== undefined) {
-    //   setGenresSelected(genresSelected);
-    // }
-
-    // setGenresSelected(genresSelected);
-
     let filteredBooks: Book[] = books;
     // Filtering Input Items
     if (searchText) {
@@ -117,9 +92,8 @@ const HomePage = () => {
           setFilteredItems(result);
         }
       } else {
-        console.log("genresSelected < 0");
-
         if (authorSelected) {
+          console.log("--- you called authorSelected - - -" + authorSelected);
           const res = books.filter((book) => book.authors === authorSelected);
           setFilteredItems(res);
         } else {

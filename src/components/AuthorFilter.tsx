@@ -6,12 +6,12 @@ import useBookQueryStore from "./store";
 const AuthorFilter = () => {
   const { books } = useBooks();
   const [authors, setAuthors] = useState<string[]>([]);
-  const setAuthorSelected = useBookQueryStore((s) => s.setAuthorSelected);
-  // const authorSelected = useBookQueryStore((s) => s.bookQuery.authorSelected);
-
+  const setAuthorSelected = useBookQueryStore(
+    (state) => state.setAuthorSelected
+  );
   useEffect(() => {
     FilteredAuthorsFunction();
-  }, [""]);
+  }, [books]);
 
   const FilteredAuthorsFunction = () => {
     const filteredAuthors: string[] = [];
@@ -30,8 +30,6 @@ const AuthorFilter = () => {
   return (
     <select
       className="form-select"
-      // multiple
-
       onChange={(event) => setAuthorSelected(event.target.value)}
     >
       <option value="">Select Favorite Author </option>
