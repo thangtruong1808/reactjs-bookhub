@@ -6,6 +6,7 @@ import { useAppContext } from "./context/bookContext.js";
 import SearchBar from "../components/SearchBar.js";
 import ThemeSwitch from "./ThemeSwitch.js";
 import useBookQueryStore from "./store.js";
+import GenreMenu from "./GenreMenu.js";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -25,7 +26,10 @@ const NavBar = () => {
     setAuthorSelected("");
   };
   return (
-    <div className="container-fluid bg-success d-flex justify-content-between text-center align-middle p-3">
+    <div
+      className="container-fluid bg-success d-flex justify-content-between 
+                text-center align-middle py-3"
+    >
       {/* Logo */}
       <div className="Logo hstack" onClick={handleBackToHomePage}>
         {/* <div className="p-3 Logo" onClick={ReturnHomePage}> */}
@@ -36,50 +40,59 @@ const NavBar = () => {
       {/* Search and Menu */}
       <div className="w-50">
         <div className="d-lg-none d-md-block">
-          {/* <GenreMenu
-                onSelectedGenres={onSelectedGenres}
-                selectedGenrefromHomeComponent={selectedGenrefromHomeComponent}
-              /> */}
+          <GenreMenu />
         </div>
-        <div className="d-none d-lg-block p-2">
+        <div className="d-none d-lg-block p-2 ">
           <SearchBar />
         </div>
       </div>
-      <div className="p-3">
+      {/* <div className="py-3">
         <ThemeSwitch />
-      </div>
+      </div> */}
       {/* Profile and Cart */}
       <div className="">
         <div className="hstack">
-          <button
+          {/* <button
             type="button"
-            className="btn btn-success me-5 position-relative"
+            className="btn btn-light me-3 position-relative"
             onClick={() => navigate("/bookcart")}
           >
-            <FiShoppingCart style={{ width: "35px", height: "35px" }} />
-            <span className="position-absolute top-0 start-200 badge rounded-pill bg-danger fs-6">
+            <FiShoppingCart
+              style={{ width: "30px", height: "30px" }}
+              onClick={() => navigate("/bookcart")}
+            />
+            <span className="position-absolute top-0 start-300 badge rounded-pill bg-danger ">
+              {favorites.length > 0 && favorites.length}
+            </span>
+          </button> */}
+          <button type="button" className="cursor-pointer me-3 btn btn-success">
+            <FiShoppingCart
+              style={{ width: "40px", height: "40px" }}
+              onClick={() => navigate("/bookcart")}
+            />
+            <span className="badge text-bg-danger">
               {favorites.length > 0 && favorites.length}
             </span>
           </button>
           <img
-            className="rounded"
+            className="rounded me-5"
             src={myprofile}
             alt="Logo"
-            width={"50px"}
-            height={"50px"}
+            width={"40px"}
+            height={"40px"}
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample"
           />
           <div
-            className="myApp offcanvas offcanvas-end "
+            className="offcanvas offcanvas-end "
             tabIndex="-1"
             data-bs-scroll="true"
             data-bs-backdrop="true"
             id="offcanvasExample"
             aria-labelledby="offcanvasExample"
           >
-            <div className="myApp text-end ">
+            <div className="text-end mt-3 me-3">
               <button
                 type="button"
                 className="btn-close"
@@ -88,7 +101,7 @@ const NavBar = () => {
               ></button>
             </div>
 
-            <div className="myApp offcanvas-header position-relative ">
+            <div className="offcanvas-header position-relative ">
               <div className="vstack">
                 <div className="hstack gap-3">
                   <img

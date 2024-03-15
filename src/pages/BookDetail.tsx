@@ -41,7 +41,7 @@ const BookDetail = () => {
     <>
       <div className="container mt-5 vh-100">
         {isLoading && (
-          <div className="text-center mt-5 fs-5 w-100">
+          <div className="text-center mt-5 fs-6 w-100">
             <p className="spinner-border "></p>
             <br />
             <p className=" w-100"> Loading in progress, please wait ...</p>

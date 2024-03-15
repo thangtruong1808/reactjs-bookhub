@@ -121,8 +121,8 @@ const HomePage = () => {
           {/* <SearchBar onSearch={HandleOnSearchInPut} /> */}
           <SearchBar />
         </div>
-        <div className="fw-bold fs-5 mt-3 ms-5 mb-2 hstack">
-          <span className=""> Filter by Author name</span>
+        <div className="fw-bold fs-6 mt-3 ms-5 mb-2 hstack">
+          <span className=""> Filter by Author </span>
           <span className="ms-3">
             <AuthorFilter />
           </span>
@@ -145,7 +145,7 @@ const HomePage = () => {
           </div>
           <div className="col-12 col-lg-10 row row-cols-4 justify-content-around mt-3">
             {isLoading && (
-              <div className="fs-5 w-50 text-center">
+              <div className="fs-6 w-50 text-center">
                 <p className="spinner-border"></p>
                 <br />
                 <p className="w-100 mt-2">
@@ -154,7 +154,7 @@ const HomePage = () => {
               </div>
             )}
             {!isLoading && filteredItems.length === 0 && (
-              <div className="fs-5 w-50 text-center">
+              <div className="fs-6 w-50 text-center">
                 Hey, No books found, please update filters.
               </div>
             )}

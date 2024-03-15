@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Book } from "../services/book-service";
 import useBookQueryStore from "./store";
+import { useNavigate } from "react-router-dom";
 
 const AsideBar = () => {
-  // const genresSelected = useBookQueryStore((s) => s.bookQuery.genresSelected);
+  const navigate = useNavigate();
+
   const genresSelected = useBookQueryStore((state) => state.genresSelected);
   const setGenresSelected = useBookQueryStore(
     (state) => state.setGenresSelected
@@ -46,6 +48,7 @@ const AsideBar = () => {
       // console.log("---you are here 2---");
       setGenresSelected([...(genresSelected ?? []), genre]);
     }
+    navigate("/");
   };
   // const UpdateSelectedGenres = () => {
   //   console.log("---you called UpdateSelectedGenres---");
