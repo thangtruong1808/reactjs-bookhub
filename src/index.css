@@ -8,3 +8,15 @@ div.Logo {
 nav ul li a{
     cursor: pointer;
 }
+div.accordion-body:hover {
+    /* background-color: yellow; */
+    color: #0d6efd;
+    /* width: 100%; */
+    transition: transform 0.5s;
+    transform: scale(1.1);
+    font-weight: bolder;
+}
+
+.cursor-pointer {
+    cursor: pointer
+}

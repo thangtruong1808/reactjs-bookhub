@@ -4,14 +4,14 @@ import { AiFillStar } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import MyPagination from "../components/MyPagination";
-import { paginate } from "../services/paginate";
+import { paginate } from "../services/paginate.js";
 
 const BookCart = () => {
   const navigate = useNavigate();
   const { favorites, RemoveFromFavorites } = useAppContext();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const numberUnitsPerPageSize = 10;
+  const numberUnitsPerPageSize = 7;
   const itemsCount = favorites.length;
   const pageSize = numberUnitsPerPageSize;
 

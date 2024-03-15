@@ -4,41 +4,52 @@ import { FiShoppingCart } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "./context/bookContext.js";
 import SearchBar from "../components/SearchBar.js";
+import ThemeSwitch from "./ThemeSwitch.js";
+import useBookQueryStore from "./store.js";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const { favorites } = useAppContext();
+  const setSearchText = useBookQueryStore((state) => state.setSearchText);
+  const setGenresSelected = useBookQueryStore(
+    (state) => state.setGenresSelected
+  );
+  const setAuthorSelected = useBookQueryStore(
+    (state) => state.setAuthorSelected
+  );
 
+  const handleBackToHomePage = () => {
+    navigate("/");
+    setSearchText("");
+    setGenresSelected([]);
+    setAuthorSelected("");
+  };
   return (
-    <div className="container-fluid bg-success d-flex justify-content-between">
+    <div className="container-fluid bg-success d-flex justify-content-between text-center align-middle p-3">
       {/* Logo */}
-      <div
-        className="p-3 Logo"
-        onClick={() => {
-          navigate("/");
-          window.location.reload();
-        }}
-      >
+      <div className="Logo hstack" onClick={handleBackToHomePage}>
         {/* <div className="p-3 Logo" onClick={ReturnHomePage}> */}
-        <GiBookshelf style={{ width: "80px", height: "50px" }} />
+        <GiBookshelf style={{ width: "70px", height: "50px" }} />
         <span className="text-uppercase fw-bold fs-5">bookhub</span>
       </div>
 
       {/* Search and Menu */}
-      <div className="w-50 text-center">
-        <div className="p-4 d-lg-none d-md-block">
+      <div className="w-50">
+        <div className="d-lg-none d-md-block">
           {/* <GenreMenu
                 onSelectedGenres={onSelectedGenres}
                 selectedGenrefromHomeComponent={selectedGenrefromHomeComponent}
               /> */}
         </div>
-        <div className="p-4 d-none d-lg-block">
+        <div className="d-none d-lg-block p-2">
           <SearchBar />
         </div>
       </div>
-
-      {/* Profile and Cart */}
       <div className="p-3">
+        <ThemeSwitch />
+      </div>
+      {/* Profile and Cart */}
+      <div className="">
         <div className="hstack">
           <button
             type="button"
@@ -60,7 +71,6 @@ const NavBar = () => {
             data-bs-target="#offcanvasExample"
             aria-controls="offcanvasExample"
           />
-
           <div
             className="myApp offcanvas offcanvas-end "
             tabIndex="-1"

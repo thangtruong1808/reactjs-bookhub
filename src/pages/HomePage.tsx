@@ -121,15 +121,15 @@ const HomePage = () => {
           {/* <SearchBar onSearch={HandleOnSearchInPut} /> */}
           <SearchBar />
         </div>
-        <div className="fw-bold fs-5 mt-3 mx-5 mb-2 ">
-          <div className="hstack gap-3">
-            <span>Filter by Author name</span>
-            <ThemeSwitch />
-          </div>
+        <div className="fw-bold fs-5 mt-3 ms-5 mb-2 hstack">
+          <span className=""> Filter by Author name</span>
+          <span className="ms-3">
+            <AuthorFilter />
+          </span>
         </div>
-        <div className="w-50 mt-3 mx-5">
+        {/* <div className="w-50 mt-3 mx-5">
           <AuthorFilter />
-        </div>
+        </div> */}
 
         <div className="fs-5 fw-bold mb-3 mx-5 mt-4 text-center">
           {filteredItems.length > 0 && (

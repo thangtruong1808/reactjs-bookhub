@@ -7,6 +7,15 @@ import Sun from "../assets/Sun.svg";
 import Moon from "../assets/Moon.svg";
 
 const ThemeSwitch = () => {
+  const [theme, setTheme] = useState("");
+
+  useEffect(() => {
+    if (selectedTheme === "dark") {
+      setDarkMode();
+      setTheme("dark");
+    }
+  }, [theme]);
+
   const setDarkMode = () => {
     document.querySelector("body")?.setAttribute("data-theme", "dark");
     localStorage.setItem("selectedTheme", "dark");
@@ -19,20 +28,20 @@ const ThemeSwitch = () => {
 
   const selectedTheme = localStorage.getItem("selectedTheme");
 
-  if (selectedTheme === "dark") {
-    setDarkMode();
-  }
-
   const toggleTheme = (e: { target: { checked: unknown } }) => {
-    if (e.target.checked) setDarkMode();
-    else setLightMode();
+    if (e.target.checked) {
+      setDarkMode();
+      setTheme("dark");
+    } else {
+      setLightMode();
+      setTheme("light");
+    }
   };
-  // console.log("------- You called ThemeSwitch Component -------");
 
   return (
     <>
       {/* <div className="form-check form-switch mx-2 position-absolute bottom-0 start-0 mb-2"> */}
-      <div className="form-check form-switch mx-2 ">
+      <div className="form-check form-switch cursor-pointer">
         <input
           className="form-check-input"
           type="checkbox"
@@ -42,28 +51,11 @@ const ThemeSwitch = () => {
           onChange={toggleTheme}
           defaultChecked={selectedTheme === "dark"}
         />
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-          Switch Theme
+        <label className="form-check-label" htmlFor="darkmode-toggle">
+          {theme === "dark" ? "Dark Mode" : "Light Mode"}
         </label>
       </div>
     </>
-    // <div id="theme-switch" className="me-5">
-    //   <div className="switch-track">
-    //     <div className="switch-check">
-    //       <span className="switch-icon">🌙</span>
-    //     </div>
-    //     <div className="switch-x">
-    //       <span className="switch-icon">🌞</span>
-    //     </div>
-    //     <div className="switch-thumb"></div>
-    //   </div>
-    //   <input
-    //     type="checkbox"
-    //     checked={darkMode}
-    //     onChange={switchTheme}
-    //     aria-label="Switch between dark and light mode"
-    //   />
-    // </div>
   );
 };
 
