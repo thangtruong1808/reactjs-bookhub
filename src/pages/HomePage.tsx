@@ -116,34 +116,50 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="container-xxl">
+      <div className="container-xxl mt-3">
         <div className="d-lg-none d-md-block mt-5 w-75 mx-5">
           {/* <SearchBar onSearch={HandleOnSearchInPut} /> */}
           <SearchBar />
         </div>
-        <div className="fw-bold fs-5 mt-3 mx-5 mb-2 text-capitalize ">
-          <div className="hstack gap-3 mx-3">
-            <span>Filter by Author Name</span>
+        <div className="fw-bold fs-5 mt-3 mx-5 mb-2 ">
+          <div className="hstack gap-3">
+            <span>Filter by Author name</span>
             <ThemeSwitch />
           </div>
         </div>
-        <div className="w-50 justify-content-center mx-5">
+        <div className="w-50 mt-3 mx-5">
           <AuthorFilter />
         </div>
-      </div>
-      <div className=" text-center fs-5 fw-bold mb-3 mx-5 mt-5">
-        {filteredItems.length > 0 && (
-          <span>Total: {filteredItems.length} Books</span>
-        )}
+
+        <div className="fs-5 fw-bold mb-3 mx-5 mt-4 text-center">
+          {filteredItems.length > 0 && (
+            <span>Total: {filteredItems.length} books</span>
+          )}
+        </div>
       </div>
 
-      <div className="container-xxl mt-2">
+      <div className="container-xxl mt-3">
         <div className="row justify-content-center">
-          <div className="col-lg-2 d-none d-lg-block text-center border-end">
+          <div className="col-lg-2 d-none d-lg-block text-center border-end mt-3">
             <AsideBar />
           </div>
-          <div className="col-12 col-lg-10 row row-cols-4 justify-content-around">
-            <BookList books={filteredItems} isLoading={isLoading} />
+          <div className="col-12 col-lg-10 row row-cols-4 justify-content-around mt-3">
+            {isLoading && (
+              <div className="fs-5 w-50 text-center">
+                <p className="spinner-border"></p>
+                <br />
+                <p className="w-100 mt-2">
+                  Loading in progress, please wait ...
+                </p>
+              </div>
+            )}
+            {!isLoading && filteredItems.length === 0 && (
+              <div className="fs-5 w-50 text-center">
+                Hey, No books found, please update filters.
+              </div>
+            )}
+
+            <BookList books={filteredItems} />
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ const NavBar = () => {
   const { favorites } = useAppContext();
 
   return (
-    <div className="myApp container-fluid bg-success d-flex justify-content-between">
+    <div className="container-fluid bg-success d-flex justify-content-between">
       {/* Logo */}
       <div
         className="p-3 Logo"

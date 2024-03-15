@@ -34,15 +34,10 @@ const AsideBar = () => {
   ]);
   console.log("genresSelected : " + genresSelected);
 
-  useEffect(() => {
-    // console.log("------- you called AsideBar Component -------");
-    // UpdateSelectedGenres();
-    // setGenresSelected(genresSelected);
-    // setSelectedGenre2(selectedGenrefromHomeComponent);
-  }, [genresSelected]);
+  // useEffect(() => {
+  // }, [genresSelected]);
 
   const handleFilterGenre = (genre: string) => {
-    // console.log("--- You clicked handleFilterGenre  ---");
     if (genresSelected?.includes(genre)) {
       // console.log("---you are here 1---");
       const filters = genresSelected.filter((element) => element !== genre);

@@ -39,15 +39,16 @@ const BookDetail = () => {
   }, [bookID]);
   return (
     <>
-      {isLoading && (
-        <div className="text-center mt-5">
-          <p className="spinner-border "></p>
-          <br />
-          <p className="fw-bold fs-4 w-100 mt-2">Loading...</p>
-        </div>
-      )}
-      <div className="myApp">
-        <div className="container mt-5 vh-100">
+      <div className="container mt-5 vh-100">
+        {isLoading && (
+          <div className="text-center mt-5 fs-5 w-100">
+            <p className="spinner-border "></p>
+            <br />
+            <p className=" w-100"> Loading in progress, please wait ...</p>
+          </div>
+        )}
+
+        {!isLoading && (
           <div className="hstack">
             <div>
               <img
@@ -85,17 +86,17 @@ const BookDetail = () => {
                   </span>
                 </span>
               </p>
+              <button
+                className="btn btn-card mx-5"
+                // onClick={() => navigate("/")}
+                onClick={handleBackHomePage}
+                style={{ width: "10rem" }}
+              >
+                Back
+              </button>
             </div>
           </div>
-          <button
-            className="btn btn-card mt-3"
-            // onClick={() => navigate("/")}
-            onClick={handleBackHomePage}
-            style={{ width: "15rem" }}
-          >
-            Back
-          </button>
-        </div>
+        )}
       </div>
     </>
   );

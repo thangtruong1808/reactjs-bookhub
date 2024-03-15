@@ -1,0 +1,10 @@
+div img {
+    cursor: pointer;
+}
+
+div.Logo {
+    cursor: pointer;
+}
+nav ul li a{
+    cursor: pointer;
+}

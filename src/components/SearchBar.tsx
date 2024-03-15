@@ -5,11 +5,8 @@ import useBookQueryStore from "./store";
 
 const SearchBar = () => {
   const ref = useRef<HTMLInputElement>(null);
-  //   const searchText = useBookQueryStore((state) => state.searchText);
   const setSearchText = useBookQueryStore((state) => state.setSearchText);
   const navigate = useNavigate();
-  //  const searchText = useBookQueryStore((state) => state.searchText);
-  //  const setSearchText = useBookQueryStore((state) => state.setSearchText);
   return (
     <form
       onSubmit={(event) => {
