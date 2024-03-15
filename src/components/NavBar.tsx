@@ -20,10 +20,10 @@ const NavBar = () => {
   );
 
   const handleBackToHomePage = () => {
-    navigate("/");
     setSearchText("");
     setGenresSelected([]);
     setAuthorSelected("");
+    navigate("/");
   };
   return (
     <div
@@ -46,25 +46,12 @@ const NavBar = () => {
           <SearchBar />
         </div>
       </div>
-      {/* <div className="py-3">
+      <div className="py-3 d-none d-lg-block fw-bold text-dark">
         <ThemeSwitch />
-      </div> */}
+      </div>
       {/* Profile and Cart */}
       <div className="">
         <div className="hstack">
-          {/* <button
-            type="button"
-            className="btn btn-light me-3 position-relative"
-            onClick={() => navigate("/bookcart")}
-          >
-            <FiShoppingCart
-              style={{ width: "30px", height: "30px" }}
-              onClick={() => navigate("/bookcart")}
-            />
-            <span className="position-absolute top-0 start-300 badge rounded-pill bg-danger ">
-              {favorites.length > 0 && favorites.length}
-            </span>
-          </button> */}
           <button type="button" className="cursor-pointer me-3 btn btn-success">
             <FiShoppingCart
               style={{ width: "40px", height: "40px" }}
@@ -75,7 +62,7 @@ const NavBar = () => {
             </span>
           </button>
           <img
-            className="rounded me-5"
+            className="rounded me-3"
             src={myprofile}
             alt="Logo"
             width={"40px"}
@@ -103,7 +90,7 @@ const NavBar = () => {
 
             <div className="offcanvas-header position-relative ">
               <div className="vstack">
-                <div className="hstack gap-3">
+                <div className="hstack gap-2 ">
                   <img
                     className="rounded"
                     src={myprofile}
@@ -111,7 +98,7 @@ const NavBar = () => {
                     width={"100px"}
                     height={"100px"}
                   />
-                  <div className="vstack">
+                  <div className="vstack mt-1">
                     <span className="fw-bold fs-4 text-uppercase">
                       Thang Truong
                     </span>
@@ -124,27 +111,24 @@ const NavBar = () => {
                 <hr />
               </div>
             </div>
-            <div className="myApp">
-              <span className="mx-3 fw-bold fs-5">Education</span>
-              <ul>
-                <li>Swinburne University of Technology</li>
-              </ul>
-              <span className="mx-3 fw-bold fs-5">Skills</span>
-              <ul className="">
-                <li>Responsive Websites</li>
-                <li>JavaScript (ReactJS and VueJS)</li>
-                <li>PHP and NodeJS</li>
-                <li>SoftWare Development for Mobile - Kotlin</li>
-                <li>AWS Architecture Cloud</li>
-                <li>MySQL, SQL and MongoDB</li>
-              </ul>
-              <span className="mx-3 fw-bold fs-5">Favorites</span>
-              <ul>
-                <li>Swimming</li>
-                <li>Badminton</li>
-                <li>BBQ</li>
-                <li>Camping</li>
-              </ul>
+            <p className="mx-3 fw-bold fs-5">Education</p>
+            <p>Swinburne University of Technology in Melbourne</p>
+            <hr />
+            <p className="mx-3 fw-bold fs-5">
+              Technoligies used in the project
+            </p>
+            <p>Reactjs18</p>
+            <p>TyppeScript - Applied Generic object</p>
+            <p>Bootstrap V5.3.3</p>
+            <p>Sass and using bootstrap variables</p>
+            <p>react-router-dom V6.22.3</p>
+            <p>react-icons V5.0.1</p>
+            <p>lodash V4.17.21</p>
+            <p>axios V1.6.7</p>
+            <p>zustand - global state management</p>
+            <p>API: https://example-data.draftbit.com/books</p>
+            <div className="position-absolute bottom-0 m-4 fw-bold ">
+              <ThemeSwitch />
             </div>
           </div>
         </div>
