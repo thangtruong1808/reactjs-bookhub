@@ -34,7 +34,7 @@ const AsideBar = () => {
     "Novels",
     "Read For School",
   ]);
-  console.log("genresSelected : " + genresSelected);
+  // console.log("genresSelected : " + genresSelected);
 
   // useEffect(() => {
   // }, [genresSelected]);

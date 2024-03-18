@@ -17,7 +17,7 @@ const HomePage = () => {
   const { books, isLoading } = useBooks();
 
   useEffect(() => {
-    console.log("------- You called Home Component -------");
+    // console.log("------- You called Home Component -------");
 
     FilteredData(books, searchText);
   }, [books, genresSelected, searchText, authorSelected]);
@@ -26,7 +26,7 @@ const HomePage = () => {
     let filteredBooks: Book[] = books;
     // Filtering Input Items
     if (searchText) {
-      console.log("You called SearchTextInPut");
+      // console.log("You called SearchTextInPut");
       const filteredItemsInput = filteredBooks.filter(
         (book) =>
           book.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
@@ -64,36 +64,35 @@ const HomePage = () => {
       // END search Genre
     }
     if (!searchText) {
-      console.log("You are here NOT SEARCHTEXT");
+      // console.log("You are here NOT SEARCHTEXT");
       // START search Genre
       if ((genresSelected ?? []).length > 0) {
-        console.log("genresSelected > 0: " + genresSelected?.length);
+        // console.log("genresSelected > 0: " + genresSelected?.length);
         const tempBookArray: Book[] = [];
         (genresSelected ?? []).forEach((e) => {
           filteredBooks.filter((book) => {
             if (book.genres.indexOf(e) !== -1) {
               // console.log("book.genres: " + book.genres);
-              console.log("genresSelected IS: " + e);
+              // console.log("genresSelected IS: " + e);
               tempBookArray.push(book);
             }
           });
         });
         const result = removeDUplicates(tempBookArray);
-        console.log("result : " + result.length);
-        console.log("genresSelected after removeDUplicates: " + genresSelected);
+        // console.log("result : " + result.length);
+        // console.log("genresSelected after removeDUplicates: " + genresSelected);
 
         // Author Filter
         if (authorSelected) {
           const res = result.filter((book) => book.authors === authorSelected);
           setFilteredItems(res);
         } else {
-          console.log("authorSelected IS NOT: ");
-
+          // console.log("authorSelected IS NOT: ");
           setFilteredItems(result);
         }
       } else {
         if (authorSelected) {
-          console.log("--- you called authorSelected - - -" + authorSelected);
+          // console.log("--- you called authorSelected - - -" + authorSelected);
           const res = books.filter((book) => book.authors === authorSelected);
           setFilteredItems(res);
         } else {
@@ -123,7 +122,7 @@ const HomePage = () => {
         </div>
         <div className="fw-bold fs-6 mt-3 mb-2 hstack">
           <span className=""> Filter by Author </span>
-          <span className="ms-3">
+          <span className="ms-3 ">
             <AuthorFilter />
           </span>
         </div>
@@ -143,28 +142,29 @@ const HomePage = () => {
         {/* justify-content-center */}
         <div className="row">
           {/* d-none row-cols-lg-2 d-lg-block text-center border-end mt-3 */}
-          <div className="d-none col-lg-2 d-lg-block text-center">
+          <div className="d-none d-lg-block col-lg-2 text-center">
             <AsideBar />
           </div>
           {/* col-12 col-lg-10 row row-cols-4 justify-content-around mt-3 */}
-          <div className="col-auto col-lg-10 row row-cols-5 d-flex justify-content-around ">
-            {isLoading ? (
-              <div className="fs-6 w-100 text-center mt-5">
-                <p className="spinner-border"></p>
-                <br />
-                <p className="w-100 mt-2">
-                  Loading in progress, please wait ...
-                </p>
-              </div>
-            ) : (
-              <BookList books={filteredItems} />
-            )}
-            {!isLoading && filteredItems.length === 0 && (
-              <div className="fs-6 w-50 text-center mt-5">
-                Hey, no books found, please update filters.
-              </div>
-            )}
-
+          <div className="col-12 col-lg-10">
+            <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 justify-content-around">
+              {isLoading ? (
+                <div className="fs-6 w-100 text-center mt-5">
+                  <p className="spinner-border"></p>
+                  <br />
+                  <p className="w-100 mt-2">
+                    Loading in progress, please wait ...
+                  </p>
+                </div>
+              ) : (
+                <BookList books={filteredItems} />
+              )}
+              {!isLoading && filteredItems.length === 0 && (
+                <div className="fs-6 w-50 text-center mt-5">
+                  Hey, no books found, please update filters.
+                </div>
+              )}
+            </div>
             {/* <BookList books={filteredItems} /> */}
           </div>
         </div>

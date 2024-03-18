@@ -22,7 +22,7 @@ const BookCard = ({ book }: BookCard) => {
   return (
     <>
       <div
-        className="rounded-4 p-0 mb-3 shadow-lg position-relative"
+        className="rounded-4 p-0 m-0 mb-3 shadow-lg position-relative"
         style={{ width: "14rem", height: "23rem" }}
       >
         <Link to={"/book/" + book.id}>
@@ -30,7 +30,12 @@ const BookCard = ({ book }: BookCard) => {
             className="rounded-top-4 card-img-top"
             src={book.image_url}
             alt={book.title}
-            style={{ height: "10rem" }}
+            style={{
+              width: "100%",
+              height: "10rem",
+              imageRendering: "auto",
+              objectFit: "fill",
+            }}
           />
         </Link>
         <div className="card-body">

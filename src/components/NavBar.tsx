@@ -115,6 +115,7 @@ const NavBar = () => {
               </div>
             </div>
             <p className="mx-3 fw-bold fs-5">Education</p>
+            <p>Bachelor of ICT</p>
             <p>Swinburne University of Technology in Melbourne</p>
             <hr />
             <p className="mx-3 fw-bold fs-5">
@@ -130,9 +131,9 @@ const NavBar = () => {
             <p>axios V1.6.7</p>
             <p>zustand - global state management</p>
             <p>API: https://example-data.draftbit.com/books</p>
-            <div className="position-absolute bottom-0 m-4 fw-bold ">
+            {/* <div className="position-absolute bottom-0 m-4 fw-bold ">
               <ThemeSwitch />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

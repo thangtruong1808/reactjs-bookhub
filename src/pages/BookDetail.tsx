@@ -49,37 +49,44 @@ const BookDetail = () => {
         )}
 
         {!isLoading && (
-          <div className="hstack">
-            <div>
+          <div className="row">
+            <div className="col-12 col-lg-3 mt-2">
               <img
+                className="img-fluid mx-auto d-block"
                 src={bookdetail?.image_url}
                 alt={bookdetail?.title}
-                style={{ width: "15rem", height: "25rem" }}
+                style={{
+                  width: "100%",
+                  height: "25rem",
+                  objectFit: "fill",
+                  imageRendering: "auto",
+                }}
+                // style={md={ width: "15rem", height: "25rem" }}
               />
             </div>
-            <div className="cart-body">
-              <p className="fs-2 fw-bold mx-5">{bookdetail?.title}</p>
-              <p className="fs-5 mx-5 ">
+            <div className="col-12 col-lg-9 row row-cols-1">
+              <p className="fs-2 fw-bold">{bookdetail?.title}</p>
+              <p className="fs-5 ">
                 <span className="fw-bold ">Author:</span>
                 <span className="badge author-bg-info text-dark mx-2">
                   {bookdetail?.authors}
                 </span>
               </p>
-              <p className="fs-6 mx-5">
+              <p className="fs-6">
                 <span className="fw-bold">Genres:</span>
                 <span className="mx-2">{bookdetail?.genres}</span>
               </p>
-              <p className="fs-6 mx-5">
+              <p className="fs-6">
                 <span className="fw-bold">Description:</span>
                 <span className="mx-2">{bookdetail?.description}</span>
               </p>
-              <p className="fs-6 mx-5">
+              <p className="fs-6">
                 <span className="fw-bold">Rating:</span>
                 <span className="badge bg-light text-dark fs-6 mx-2">
                   {bookdetail?.rating}
                 </span>
                 <AiFillStar className="text-warning fs-4 mb-1" />
-                <span className="mx-5">
+                <span className="mx-2">
                   Pages:{" "}
                   <span className="badge bg-secondary fs-6">
                     {bookdetail?.num_pages}
@@ -87,7 +94,7 @@ const BookDetail = () => {
                 </span>
               </p>
               <button
-                className="btn btn-card mx-5"
+                className="btn btn-card mx-3"
                 // onClick={() => navigate("/")}
                 onClick={handleBackHomePage}
                 style={{ width: "10rem" }}

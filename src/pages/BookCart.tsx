@@ -2,7 +2,7 @@ import { Book } from "../services/book-service";
 import { useAppContext } from "../components/context/bookContext";
 import { AiFillStar } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MyPagination from "../components/MyPagination";
 import { paginate } from "../services/paginate.js";
 
@@ -10,8 +10,9 @@ const BookCart = () => {
   const navigate = useNavigate();
   const { favorites, RemoveFromFavorites } = useAppContext();
   const [currentPage, setCurrentPage] = useState(1);
+  // const [myResult, setMyResult] = useState(null);
 
-  const numberUnitsPerPageSize = 5;
+  const numberUnitsPerPageSize = 2;
   const itemsCount = favorites.length;
   const pageSize = numberUnitsPerPageSize;
 
@@ -31,10 +32,15 @@ const BookCart = () => {
     }
   };
   const myResult = paginate(favorites, currentPage, numberUnitsPerPageSize);
+  if (myResult < 1) {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
   return (
     <>
       <div className="d-flex justify-content-center container-xl mt-3 text-center">
-        {myResult.length === 0 ? (
+        {favorites.length === 0 ? (
           <div className="flex-column mb-5 fw-bold fs-2">
             <span>Your Cart is empty</span>
             <button

@@ -5,7 +5,12 @@
 
 :root {
 
-    --bs-body-bg: #{$gray-100};
+    // --bs-body-bg: #{$gray-200};
+        // f4f4f4
+        // F5F5F5
+        // FFFFFF
+        --bs-body-bg: #FFFFFF;
+        
     --bs-body-color: #212529;
     --bs-btn-bg: #{$blue-400};
     --bs-btn-border-color: #{$blue-400};
@@ -55,6 +60,18 @@
             --bs-btn-hover-bg: #{$green-200};
         }
     }
+
+    .form-control {
+        background-color: $gray-100;
+        color: #212529;
+    }
+    .form-select {
+        background-color: $gray-100;
+        color: #212529;
+    }
+    ::placeholder{
+        color: #212529;
+    }
 }
 [data-theme="dark"] {
     --bs-body-bg: #{$gray-800};        
@@ -64,6 +81,17 @@
         --bs-btn-color: #212529;
         --bs-btn-hover-bg: #{$gray-700};
         --bs-btn-border-color: #{$gray-500};
+    }
+    ::placeholder {
+        color: #212529;
+    }
+    .form-control {
+        background-color: $gray-100;
+        color: #212529;
+    }
+    .form-select{
+        background-color: $gray-100;
+        color: #212529;
     }
     .accordion-button.collapsed {
         background: #fff;
