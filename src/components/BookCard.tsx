@@ -54,7 +54,7 @@ const BookCard = ({ book }: BookCard) => {
           <div className="">
             {favoritesChecker(book.id) ? (
               <button
-                className="p-2 fw-bold rounded-bottom-4 position-absolute bottom-0 w-100 btn btn-danger btn-sm"
+                className="p-2 fw-bold rounded-bottom-4 position-absolute bottom-0 w-100 btn btn-card-remove btn-sm"
                 onClick={() => RemoveFromFavorites(book.id)}
               >
                 Remove from Cart

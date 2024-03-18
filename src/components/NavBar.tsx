@@ -28,7 +28,7 @@ const NavBar = () => {
   return (
     <div
       className="container-fluid d-flex justify-content-between 
-                text-center  custom-bg py-3"
+                text-center  custom-bg py-4"
     >
       {/* Logo */}
       <div className="cursor-pointer hstack" onClick={handleBackToHomePage}>
@@ -60,7 +60,7 @@ const NavBar = () => {
               style={{ width: "40px", height: "40px" }}
               onClick={() => navigate("/bookcart")}
             />
-            <span className="badge text-bg-danger">
+            <span className="badge text-bg-secondary">
               {favorites.length > 0 && favorites.length}
             </span>
           </button>

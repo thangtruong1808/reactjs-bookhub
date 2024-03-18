@@ -18,16 +18,18 @@
         background-color: #{$gray-300};
         color: black;
     }
-    .btn-danger{
-    --bs-btn-bg: #{$red-300};
-    --bs-btn-color: #212529;
-    --bs-btn-hover-bg: #{$red-300};
-    --bs-btn-border-color: #{$red-300};
+    .btn-card-remove{
+    // --bs-btn-bg: #{$red-300};
+        --bs-btn-bg: #{$gray-600};
+    // --bs-btn-color: #212529;
+        --bs-btn-color: #F5F5F5;
+    --bs-btn-hover-bg: #{$gray-600};
+    --bs-btn-border-color: #{$gray-600};
     }
     .btn-card {
         --bs-btn-bg: #{$gray-500};
         --bs-btn-color: #212529;
-        --bs-btn-hover-bg: #{$gray-300};
+        --bs-btn-hover-bg: #{$gray-400};
         --bs-btn-border-color: #{$gray-400};
     }
     .btn-ShoppingCart{
@@ -74,13 +76,23 @@
     }
 }
 [data-theme="dark"] {
-    --bs-body-bg: #{$gray-800};        
+    --bs-body-bg: #{$gray-900};        
     --bs-body-color: #{$gray-500};
+
+    .btn-card-remove {
+        // --bs-btn-bg: #{$red-300};
+        --bs-btn-bg: #{$gray-600};
+        // --bs-btn-color: #212529;
+        --bs-btn-color: #F5F5F5;
+        --bs-btn-hover-bg: #{$gray-600};
+        --bs-btn-border-color: #{$gray-600};
+    }
+
     .btn-card {
         --bs-btn-bg: #{$gray-500};
         --bs-btn-color: #212529;
         --bs-btn-hover-bg: #{$gray-700};
-        --bs-btn-border-color: #{$gray-500};
+        --bs-btn-border-color: #{$gray-700};
     }
     ::placeholder {
         color: #212529;
