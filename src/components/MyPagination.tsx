@@ -23,7 +23,7 @@ const MyPagination = ({
 
   return (
     <nav>
-      <ul className="pagination justify-content-center">
+      <ul className="pagination justify-content-center ">
         <li className={currentPage === 1 ? "page-item disabled" : "page-item"}>
           <a className="page-link" onClick={() => onPreviousPage(currentPage)}>
             Previous

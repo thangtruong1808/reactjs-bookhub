@@ -27,14 +27,14 @@ const NavBar = () => {
   };
   return (
     <div
-      className="container-fluid bg-success d-flex justify-content-between 
-                text-center align-middle py-3"
+      className="container-fluid d-flex justify-content-between 
+                text-center  custom-bg py-3"
     >
       {/* Logo */}
-      <div className="Logo hstack" onClick={handleBackToHomePage}>
+      <div className="cursor-pointer hstack" onClick={handleBackToHomePage}>
         {/* <div className="p-3 Logo" onClick={ReturnHomePage}> */}
-        <GiBookshelf style={{ width: "70px", height: "50px" }} />
-        <span className="text-uppercase fw-bold fs-5">bookhub</span>
+        <GiBookshelf style={{ width: "70px", height: "50px" }} className="" />
+        <span className=" text-uppercase fw-bold fs-5">bookhub</span>
       </div>
 
       {/* Search and Menu */}
@@ -46,13 +46,16 @@ const NavBar = () => {
           <SearchBar />
         </div>
       </div>
-      <div className="py-3 d-none d-lg-block fw-bold text-dark">
+      <div className="py-3 d-none d-lg-block fw-bold  cursor-pointer">
         <ThemeSwitch />
       </div>
       {/* Profile and Cart */}
       <div className="">
         <div className="hstack">
-          <button type="button" className="cursor-pointer me-3 btn btn-success">
+          <button
+            type="button"
+            className="cursor-pointer me-3 btn btn-ShoppingCart"
+          >
             <FiShoppingCart
               style={{ width: "40px", height: "40px" }}
               onClick={() => navigate("/bookcart")}
@@ -62,7 +65,7 @@ const NavBar = () => {
             </span>
           </button>
           <img
-            className="rounded me-3"
+            className="rounded me-3 cursor-pointer"
             src={myprofile}
             alt="Logo"
             width={"40px"}
@@ -115,12 +118,12 @@ const NavBar = () => {
             <p>Swinburne University of Technology in Melbourne</p>
             <hr />
             <p className="mx-3 fw-bold fs-5">
-              Technoligies used in the project
+              Technologies used in the project
             </p>
             <p>Reactjs18</p>
             <p>TyppeScript - Applied Generic object</p>
             <p>Bootstrap V5.3.3</p>
-            <p>Sass and using bootstrap variables</p>
+            <p>Responsive, Breakpoints, Sass and Variables</p>
             <p>react-router-dom V6.22.3</p>
             <p>react-icons V5.0.1</p>
             <p>lodash V4.17.21</p>

@@ -23,21 +23,21 @@ const BookCard = ({ book }: BookCard) => {
     <>
       <div
         className="rounded-4 p-0 mb-3 shadow-lg position-relative"
-        style={{ width: "15rem", height: "24rem" }}
+        style={{ width: "14rem", height: "23rem" }}
       >
         <Link to={"/book/" + book.id}>
           <img
-            className="col rounded-top-4 card-img-top"
+            className="rounded-top-4 card-img-top"
             src={book.image_url}
             alt={book.title}
-            style={{ height: "13rem" }}
+            style={{ height: "10rem" }}
           />
         </Link>
         <div className="card-body">
           <p className="fw-bold text-center m-1">{book.title}</p>
           <p className="mx-2 m-1">
             Author:
-            <span className="fw-bold badge rounded-pill author-bg-info mx-2">
+            <span className="fw-bold badge rounded-pill author-bg-info mx-1">
               {book.authors}
             </span>
           </p>
@@ -46,7 +46,6 @@ const BookCard = ({ book }: BookCard) => {
             Rating: {book.rating}
             <AiFillStar className="text-warning fs-5 mb-1 mx-1" />
           </p>
-
           <div className="">
             {favoritesChecker(book.id) ? (
               <button

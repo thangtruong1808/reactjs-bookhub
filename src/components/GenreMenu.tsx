@@ -37,9 +37,7 @@ const GenreMenu = () => {
             <div className="vstack">
               <div className="hstack gap-3">
                 <h5 className="offcanvas-title" id="staticBackdropLabel">
-                  <GiBookshelf
-                    style={{ width: "70px", height: "50px", color: "green" }}
-                  />
+                  <GiBookshelf style={{ width: "70px", height: "50px" }} />
                   <span className="text-uppercase fw-bold fs-5">bookhub</span>
                 </h5>
               </div>

@@ -98,7 +98,7 @@ const AsideBar = () => {
                   onClick={() => handleFilterGenre(genre)}
                   className={
                     genresSelected?.includes(genre)
-                      ? "form-check-label ms-2 fw-bold text-primary"
+                      ? "form-check-label ms-2 fw-bold text-danger"
                       : "form-check-label ms-2 "
                   }
                 >

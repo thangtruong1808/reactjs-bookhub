@@ -29,7 +29,7 @@ const AuthorFilter = () => {
   const finalResult = removeDUplicates(authors);
   return (
     <select
-      className="form-select bg-light"
+      className="form-select"
       onChange={(event) => setAuthorSelected(event.target.value)}
     >
       <option value="">Select Favorite Author </option>

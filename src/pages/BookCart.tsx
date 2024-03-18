@@ -11,7 +11,7 @@ const BookCart = () => {
   const { favorites, RemoveFromFavorites } = useAppContext();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const numberUnitsPerPageSize = 7;
+  const numberUnitsPerPageSize = 5;
   const itemsCount = favorites.length;
   const pageSize = numberUnitsPerPageSize;
 
@@ -49,7 +49,7 @@ const BookCart = () => {
           <div>
             <h1 className="text-center fw-bold fs-2 my-3">Your Cart</h1>
             <table className="table table-bordered table-hover">
-              <thead className="table-dark text-center">
+              <thead className="table-dark text-center text-white">
                 <tr>
                   <th scope="col">ID</th>
                   <th>Photo</th>
@@ -62,10 +62,10 @@ const BookCart = () => {
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="">
                 {myResult.sort().map((unit: Book) => (
-                  <tr key={unit.id} className="text-center align-middle">
-                    <td>{unit.id}</td>
+                  <tr key={unit.id} className="text-center align-middle ">
+                    <td className="custom-font-color">{unit.id}</td>
                     <td>
                       <img
                         src={unit.image_url}
@@ -73,14 +73,16 @@ const BookCart = () => {
                         style={{ width: "50px", height: "50px" }}
                       />
                     </td>
-                    <td>{unit.title}</td>
-                    <td>{unit.authors}</td>
+                    <td className="custom-font-color">{unit.title}</td>
+                    <td className="custom-font-color">{unit.authors}</td>
                     {/* <td className="text-center">
                       {unit.edition.length === 0 ? "N/A" : unit.edition}
                     </td> */}
-                    <td>{unit.num_pages}</td>
-                    <td>{unit.genres as unknown as []}</td>
-                    <td>
+                    <td className="custom-font-color">{unit.num_pages}</td>
+                    <td className="custom-font-color">
+                      {unit.genres as unknown as []}
+                    </td>
+                    <td className="custom-font-color">
                       {unit.rating}
                       <AiFillStar className="text-warning fs-5 mb-1" />
                     </td>
@@ -98,11 +100,13 @@ const BookCart = () => {
               </tbody>
               <tfoot>
                 <tr>
-                  <td colSpan={2} className="fw-bold fs-5">
+                  <td colSpan={2} className="fw-bold fs-5 custom-font-color">
                     Total:
                   </td>
                   <td colSpan={7} className=" text-start fw-bold fs-5">
-                    <span>{favorites.length} items</span>
+                    <span className="custom-font-color">
+                      {favorites.length} items
+                    </span>
                   </td>
                 </tr>
               </tfoot>

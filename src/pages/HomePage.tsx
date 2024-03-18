@@ -117,11 +117,11 @@ const HomePage = () => {
   return (
     <>
       <div className="container-xxl mt-3">
-        <div className="d-lg-none d-md-block mt-5 w-75 mx-5">
+        <div className="d-lg-none d-md-block  mt-5 w-100 ">
           {/* <SearchBar onSearch={HandleOnSearchInPut} /> */}
           <SearchBar />
         </div>
-        <div className="fw-bold fs-6 mt-3 ms-5 mb-2 hstack">
+        <div className="fw-bold fs-6 mt-3 mb-2 hstack">
           <span className=""> Filter by Author </span>
           <span className="ms-3">
             <AuthorFilter />
@@ -130,36 +130,42 @@ const HomePage = () => {
         {/* <div className="w-50 mt-3 mx-5">
           <AuthorFilter />
         </div> */}
-
-        <div className="fs-5 fw-bold mb-3 mx-5 mt-4 text-center">
-          {filteredItems.length > 0 && (
-            <span>Total: {filteredItems.length} books</span>
-          )}
-        </div>
+        {!isLoading && (
+          <div className="fs-5 fw-bold mb-4 mx-5 mt-5 text-center">
+            {filteredItems.length > 0 && (
+              <span>Total: {filteredItems.length} books</span>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="container-xxl mt-3">
-        <div className="row justify-content-center">
-          <div className="col-lg-2 d-none d-lg-block text-center border-end mt-3">
+        {/* justify-content-center */}
+        <div className="row">
+          {/* d-none row-cols-lg-2 d-lg-block text-center border-end mt-3 */}
+          <div className="d-none col-lg-2 d-lg-block text-center">
             <AsideBar />
           </div>
-          <div className="col-12 col-lg-10 row row-cols-4 justify-content-around mt-3">
-            {isLoading && (
-              <div className="fs-6 w-50 text-center">
+          {/* col-12 col-lg-10 row row-cols-4 justify-content-around mt-3 */}
+          <div className="col-auto col-lg-10 row row-cols-5 d-flex justify-content-around ">
+            {isLoading ? (
+              <div className="fs-6 w-100 text-center mt-5">
                 <p className="spinner-border"></p>
                 <br />
                 <p className="w-100 mt-2">
                   Loading in progress, please wait ...
                 </p>
               </div>
+            ) : (
+              <BookList books={filteredItems} />
             )}
             {!isLoading && filteredItems.length === 0 && (
-              <div className="fs-6 w-50 text-center">
-                Hey, No books found, please update filters.
+              <div className="fs-6 w-50 text-center mt-5">
+                Hey, no books found, please update filters.
               </div>
             )}
 
-            <BookList books={filteredItems} />
+            {/* <BookList books={filteredItems} /> */}
           </div>
         </div>
       </div>

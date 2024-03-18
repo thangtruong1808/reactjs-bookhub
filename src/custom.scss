@@ -2,7 +2,9 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 
+
 :root {
+
     --bs-body-bg: #{$gray-100};
     --bs-body-color: #212529;
     --bs-btn-bg: #{$blue-400};
@@ -11,26 +13,74 @@
         background-color: #{$gray-300};
         color: black;
     }
-
+    .btn-danger{
+    --bs-btn-bg: #{$red-300};
+    --bs-btn-color: #212529;
+    --bs-btn-hover-bg: #{$red-300};
+    --bs-btn-border-color: #{$red-300};
+    }
     .btn-card {
-        --bs-btn-bg: #{$green-400};
+        --bs-btn-bg: #{$gray-500};
         --bs-btn-color: #212529;
-        --bs-btn-hover-bg: #{$green-300};
-        --bs-btn-border-color: #{$green-400};
+        --bs-btn-hover-bg: #{$gray-300};
+        --bs-btn-border-color: #{$gray-400};
+    }
+    .btn-ShoppingCart{
+        --bs-btn-hover-bg: #{$gray-100};
+    }
+   .form-check-label {
+       color: #{$gray-900};
+   }
+    div.accordion-body:hover {
+        color: $red-500;
+        /* width: 100%; */
+        // transition: transform 0.5s;
+        // transform: scale(1.1);
+        // font-weight: bolder;
+    }
+
+    /* Custom background style for medium devices */
+    // @include media-breakpoint-up(md) {
+    //     .custom-bg {
+    //         background-color: #{$gray-100};
+    //     }
+    // }
+    /* Custom background style for small devices */
+    @include media-breakpoint-down(md) {
+        .custom-bg {
+            background-color:#{$cyan-700};
+        }
+        
+        .btn-ShoppingCart {
+            --bs-btn-hover-bg: #{$green-200};
+        }
     }
 }
 [data-theme="dark"] {
-    --bs-body-bg: #{$gray-800};
-    --bs-body-color: #{$gray-400};
-
+    --bs-body-bg: #{$gray-800};        
+    --bs-body-color: #{$gray-500};
     .btn-card {
         --bs-btn-bg: #{$gray-500};
         --bs-btn-color: #212529;
         --bs-btn-hover-bg: #{$gray-700};
         --bs-btn-border-color: #{$gray-500};
     }
-
     .accordion-button.collapsed {
         background: #fff;
+    }
+    .btn-ShoppingCart {
+        --bs-btn-hover-bg: #{$gray-800};
+    }
+    .table-bordered{
+        --bs-table-border-color: #{$gray-500};        
+    }
+    .table-dark{
+        --bs-table-border-color: #{$gray-500};
+    }
+    .custom-font-color{
+        color: #{$gray-500};
+    }
+    .form-check-label{
+        color: #{$gray-400};
     }
 }
