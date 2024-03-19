@@ -12,7 +12,7 @@ const BookCart = () => {
   const [currentPage, setCurrentPage] = useState(1);
   // const [myResult, setMyResult] = useState(null);
 
-  const numberUnitsPerPageSize = 2;
+  const numberUnitsPerPageSize = 5;
   const itemsCount = favorites.length;
   const pageSize = numberUnitsPerPageSize;
 
@@ -39,7 +39,7 @@ const BookCart = () => {
   }
   return (
     <>
-      <div className="d-flex justify-content-center container-xl mt-3 text-center">
+      <div className="d-flex justify-content-center container-xxl mt-3 text-center">
         {favorites.length === 0 ? (
           <div className="flex-column mb-5 fw-bold fs-2">
             <span>Your Cart is empty</span>
@@ -52,7 +52,7 @@ const BookCart = () => {
             </button>
           </div>
         ) : (
-          <div>
+          <div className="table-responsive">
             <h1 className="text-center fw-bold fs-2 my-3">Your Cart</h1>
             <table className="table table-bordered table-hover">
               <thead className="table-dark text-center text-white">

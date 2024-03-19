@@ -28,7 +28,7 @@ const NavBar = () => {
   return (
     <div
       className="container-fluid d-flex justify-content-between 
-                text-center  custom-bg py-4"
+                text-center custom-bg py-4"
     >
       {/* Logo */}
       <div className="cursor-pointer hstack" onClick={handleBackToHomePage}>

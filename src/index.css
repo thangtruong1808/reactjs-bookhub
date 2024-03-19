@@ -4,4 +4,13 @@ body{
 .cursor-pointer {
     cursor: pointer
 }
+.table-responsive {
+    width: 100%;
+}
 
+  /* div.accordion-body:hover {
+    transition: transform 0.5s;
+    transform: scale(1.1);
+    font-weight: bolder;
+    color: red;
+} */

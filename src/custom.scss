@@ -9,8 +9,7 @@
         // f4f4f4
         // F5F5F5
         // FFFFFF
-        --bs-body-bg: #FFFFFF;
-        
+    --bs-body-bg: #FFFFFF;
     --bs-body-color: #212529;
     --bs-btn-bg: #{$blue-400};
     --bs-btn-border-color: #{$blue-400};
@@ -36,15 +35,19 @@
         --bs-btn-hover-bg: #{$gray-100};
     }
    .form-check-label {
-       color: #{$gray-900};
+    //    color: #{$gray-900};
+        color: #{$gray-900};
    }
-    div.accordion-body:hover {
-        color: $red-500;
-        /* width: 100%; */
+   .text-color-custom{
+        color: #{$blue-500};
+        font-weight: 600;
+   }
+   .form-check-label:hover{
         // transition: transform 0.5s;
         // transform: scale(1.1);
-        // font-weight: bolder;
-    }
+        font-weight: 600;
+        color: #{$blue-500};
+   }
 
     /* Custom background style for medium devices */
     // @include media-breakpoint-up(md) {
@@ -62,7 +65,6 @@
             --bs-btn-hover-bg: #{$green-200};
         }
     }
-
     .form-control {
         background-color: $gray-100;
         color: #212529;
@@ -74,6 +76,7 @@
     ::placeholder{
         color: #212529;
     }
+
 }
 [data-theme="dark"] {
     --bs-body-bg: #{$gray-900};        
@@ -122,5 +125,9 @@
     }
     .form-check-label{
         color: #{$gray-400};
+    }
+    .text-color-custom {
+        color: #{$blue-300};
+        font-weight: 600;
     }
 }

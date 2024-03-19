@@ -83,7 +83,7 @@ const AsideBar = () => {
           >
             {allGenres.sort().map((genre, index) => (
               <div
-                className="form-check accordion-body hstack form-check ms-4 "
+                className="form-check accordion-body hstack ms-2"
                 key={index}
               >
                 <input
@@ -98,8 +98,8 @@ const AsideBar = () => {
                   onClick={() => handleFilterGenre(genre)}
                   className={
                     genresSelected?.includes(genre)
-                      ? "form-check-label ms-2 fw-bold text-danger"
-                      : "form-check-label ms-2 "
+                      ? "form-check-label ms-2 mt-1 text-color-custom"
+                      : "form-check-label ms-2 mt-1"
                   }
                 >
                   {genre}
