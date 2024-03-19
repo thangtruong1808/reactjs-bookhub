@@ -76,7 +76,7 @@ const NavBar = () => {
           />
           <div
             className="offcanvas offcanvas-end "
-            tabIndex="-1"
+            tabIndex={-1}
             data-bs-scroll="true"
             data-bs-backdrop="true"
             id="offcanvasExample"

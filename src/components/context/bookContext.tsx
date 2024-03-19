@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { FC } from "react";
+import React from "react";
 import { useState } from "react";
 import { createContext, useContext } from "react";
 import { Book } from "../../services/book-service";

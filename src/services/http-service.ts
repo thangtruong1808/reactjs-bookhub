@@ -1,5 +1,4 @@
 import apiClient from "./api-client";
-import { BookProps } from "./book-service";
 
 interface Entity {
   id: number;

@@ -1,8 +1,5 @@
-import React from "react";
-import myprofile from "../assets/Feb-2023_avartar.jpg";
-
 import { TfiMenu } from "react-icons/tfi";
-import { LuMenuSquare } from "react-icons/lu";
+// import { LuMenuSquare } from "react-icons/lu";
 import AsideBar from "./AsideBar";
 import { GiBookshelf } from "react-icons/gi";
 

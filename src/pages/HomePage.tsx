@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import AsideBar from "../components/AsideBar";
 import BookList from "../components/BookList";
 import SearchBar from "../components/SearchBar";
-import ThemeSwitch from "../components/ThemeSwitch";
 import AuthorFilter from "../components/AuthorFilter";
 import useBooks from "../hooks/useBooks";
 import useBookQueryStore from "../components/store";

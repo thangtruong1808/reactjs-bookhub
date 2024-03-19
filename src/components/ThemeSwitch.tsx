@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
-import { useThemeContext } from "../hooks/useThemeContext";
-import { FaMoon, FaSun } from "react-icons/fa";
-import styled from "styled-components";
-import { useTheme } from "../components/context/ThemeContext";
-import Sun from "../assets/Sun.svg";
-import Moon from "../assets/Moon.svg";
+// import Sun from "../assets/Sun.svg";
+// import Moon from "../assets/Moon.svg";
 
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState("");

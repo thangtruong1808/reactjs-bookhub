@@ -2,7 +2,7 @@ import { Book } from "../services/book-service";
 import { useAppContext } from "../components/context/bookContext";
 import { AiFillStar } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MyPagination from "../components/MyPagination";
 import { paginate } from "../services/paginate.js";
 
@@ -32,7 +32,7 @@ const BookCart = () => {
     }
   };
   const myResult = paginate(favorites, currentPage, numberUnitsPerPageSize);
-  if (myResult < 1) {
+  if (myResult.length < 1) {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }

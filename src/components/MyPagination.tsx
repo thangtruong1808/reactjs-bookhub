@@ -1,4 +1,3 @@
-import Pagination from "react-bootstrap/Pagination";
 import _ from "lodash";
 
 interface Props {

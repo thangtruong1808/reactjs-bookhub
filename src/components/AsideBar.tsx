@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Book } from "../services/book-service";
+// import { useState } from "react";
+// import { Book } from "../services/book-service";
 import useBookQueryStore from "./store";
 import { useNavigate } from "react-router-dom";
 
@@ -10,10 +10,7 @@ const AsideBar = () => {
   const setGenresSelected = useBookQueryStore(
     (state) => state.setGenresSelected
   );
-  const [selectedFilterGenres, setSelectedFilterGenres] = useState<string[]>(
-    []
-  );
-  const [allGenres, setAllGenres] = useState([
+  const allGenres = [
     "Childrens",
     "Contemporary",
     "Classics",
@@ -33,7 +30,28 @@ const AsideBar = () => {
     "Politics",
     "Novels",
     "Read For School",
-  ]);
+  ];
+  // const [allGenres, setAllGenres] = useState([
+  //   "Childrens",
+  //   "Contemporary",
+  //   "Classics",
+  //   "Young Adult",
+  //   "Fiction",
+  //   "Dystopia",
+  //   "Fantasy",
+  //   "Science Fiction",
+  //   "Historical",
+  //   "Historical Fiction",
+  //   "Academic",
+  //   "School",
+  //   "Romance",
+  //   "Paranormal",
+  //   "Vampires",
+  //   "Literature",
+  //   "Politics",
+  //   "Novels",
+  //   "Read For School",
+  // ]);
   // console.log("genresSelected : " + genresSelected);
 
   // useEffect(() => {

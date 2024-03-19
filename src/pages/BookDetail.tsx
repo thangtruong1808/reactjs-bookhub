@@ -39,6 +39,7 @@ const BookDetail = () => {
   }, [bookID]);
   return (
     <>
+      {error && <p>{error}</p>}
       <div className="container mt-5 vh-100">
         {isLoading && (
           <div className="text-center mt-5 fs-6 w-100">

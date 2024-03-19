@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
-import useBooks from "../hooks/useBooks";
 import { Book } from "../services/book-service";
 import BookCard from "./BookCard";
-import useBookQueryStore from "./store";
 
 interface Props {
   books: Book[];
