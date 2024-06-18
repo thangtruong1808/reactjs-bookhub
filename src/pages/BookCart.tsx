@@ -62,8 +62,8 @@ const BookCart = () => {
                   <th>Title</th>
                   <th>Authors</th>
                   {/* <th>Edition</th> */}
-                  <th>Num_Pages</th>
-                  <th>Genres</th>
+                  <th className="d-none d-md-table-cell">Num_Pages</th>
+                  <th className="d-none d-md-table-cell">Genres</th>
                   <th>Rating</th>
                   <th>Action</th>
                 </tr>
@@ -84,8 +84,10 @@ const BookCart = () => {
                     {/* <td className="text-center">
                       {unit.edition.length === 0 ? "N/A" : unit.edition}
                     </td> */}
-                    <td className="custom-font-color">{unit.num_pages}</td>
-                    <td className="custom-font-color">
+                    <td className="custom-font-color d-none d-md-table-cell">
+                      {unit.num_pages}
+                    </td>
+                    <td className="custom-font-color d-none d-md-table-cell">
                       {unit.genres as unknown as []}
                     </td>
                     <td className="custom-font-color">
